@@ -1,0 +1,18 @@
+FROM node
+
+WORKDIR /app
+
+COPY ./package.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 8000
+
+# ENV MONGODB_USERNAME=parames
+# ENV MONGODB_PASSWORD=2002
+# ENV MONGODB_URL=mongodb
+# ENV MONGODB_NAME=goals-dev
+
+CMD ["npm", "start"]
