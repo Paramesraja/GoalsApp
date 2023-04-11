@@ -12,7 +12,7 @@ services:
     env_file:
       - "./env/production.env"
   frontend:
-    stdin_open: true
+    stdin_open: true #for interactive mode
     build: 
       dockerfile: Dockerfile.dev
       context: ./frontend
@@ -20,6 +20,6 @@ services:
       - '3000:3000'
     volumes:
       - ./frontend/src:/app/src
-    tty: true
+    tty: true # -it (interactive mode)
     depends_on:
       - backend
